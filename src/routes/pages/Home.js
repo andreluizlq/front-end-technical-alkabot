@@ -28,11 +28,12 @@ function Home() {
   const listPosts = useSelector(selectPostsData);
   const [page, setPage] = useState(1);
   const pageLimit = 6;
-  window.scrollTo(0, 0);
+
   useEffect(() => {
     dispatch(fetchPostsData()).then(unwrapResult);
   }, [dispatch]);
 
+  window.scrollTo(0, 0);
   return (
     <Page variant>
       <Stack
@@ -91,13 +92,13 @@ function Home() {
               {listPosts
                 ?.slice((page - 1) * pageLimit, page * pageLimit)
                 .map((item, index) => (
-                  <CardPosts item={item} />
+                  <CardPosts item={item} key={index} />
                 ))}
             </Stack>
             <Stack alignItems="center" my={4}>
               <Pagination
                 sx={{ pb: "1rem" }}
-                count={Math.ceil(listPosts.length / pageLimit)}
+                count={Math.ceil(listPosts?.length / pageLimit)}
                 onChange={(_, value) => setPage(value)}
                 page={page}
                 size="small"

@@ -60,7 +60,7 @@ function Perfil() {
             color="secondary"
             mb="1rem"
             fontWeight="300"
-            sx={{ fontStyle: "italic" }}
+            fontStyle="italic"
           >
             @{userDetails?.username}
           </Typography>
@@ -69,13 +69,13 @@ function Perfil() {
             {listPostsUser
               ?.slice((page - 1) * pageLimit, page * pageLimit)
               .map((item, index) => (
-                <CardPosts item={item} />
+                <CardPosts item={item} key={index} />
               ))}
           </Stack>
           <Stack alignItems="center" my={4}>
             <Pagination
               sx={{ pb: "1rem" }}
-              count={Math.ceil(listPostsUser.length / pageLimit)}
+              count={Math.ceil(listPostsUser?.length / pageLimit)}
               onChange={(_, value) => setPage(value)}
               page={page}
               size="small"
@@ -110,6 +110,8 @@ function Perfil() {
                   variant="contained"
                   color="secondary"
                   size="small"
+                  target="_blank"
+                  href={`http://${userDetails.website}`}
                   sx={{
                     textTransform: "none",
                     paddingX: "23px",
@@ -122,6 +124,8 @@ function Perfil() {
                 </Button>
                 <Box width="3px">
                   <IconButton
+                    target="_blank"
+                    href={`https://www.google.com.br/maps/@${userDetails?.address?.geo?.lat},${userDetails?.address?.geo?.lng}`}
                     color="secondary"
                     sx={{
                       background: "#6383dd",
