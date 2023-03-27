@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/front-end-technical-alkabot/static/css/main.8b9345d1.css",
+    "main.js": "/front-end-technical-alkabot/static/js/main.66256d8e.js",
+    "static/media/perfilImg.jpg": "/front-end-technical-alkabot/static/media/perfilImg.cc8f73a302a4e30192c5.jpg",
+    "index.html": "/front-end-technical-alkabot/index.html",
+    "main.8b9345d1.css.map": "/front-end-technical-alkabot/static/css/main.8b9345d1.css.map",
+    "main.66256d8e.js.map": "/front-end-technical-alkabot/static/js/main.66256d8e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b9345d1.css",
+    "static/js/main.66256d8e.js"
+  ]
+}
