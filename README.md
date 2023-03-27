@@ -1,5 +1,5 @@
 # Customer registration 
-Front-end challenge passed by the company Evolutto. 
+Front-end challenge passed by the company Alkabot. 
 
 ![alt text](https://github.com/andreluizlq/front-end-technical-alkabot/blob/master/public/home.PNG)
 
