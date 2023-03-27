@@ -51,7 +51,7 @@ function Perfil() {
   return (
     <Page container>
       <Grid container height="100%" sx={{ height: "91.4vh" }}>
-        <Grid item xs={12} md={8} pr="87px">
+        <Grid item xs={12} md={8} pr={{ xs: "0", sm: "87px" }}>
           <Typography fontSize="1rem" color="#757575" mt="2.5rem">
             Publicações de {userDetails?.name}
           </Typography>
