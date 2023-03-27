@@ -65,7 +65,6 @@ function Home() {
                   textTransform: "none",
                   paddingX: "40px",
                   borderRadius: "2rem",
-                  fontWeight: 500,
                   Top: "1rem",
                 }}
               >

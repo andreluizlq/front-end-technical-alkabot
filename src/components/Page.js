@@ -31,124 +31,63 @@ const Page = ({ children, container = false, variant = false }) => {
 
   return (
     <Stack>
-      {variant && (
-        <Stack
-          alignItems="center"
-          px="1.5rem"
-          py="0.5rem"
-          flexDirection="row"
-          justifyContent="space-between"
-          sx={{
-            borderBottom: !isActive
-              ? "0.5px solid #2F2F32"
-              : "0.5px solid #E0E0E0",
-            background: !isActive ? "#6383DD" : "#fff",
-            zIndex: "100",
-            position: "fixed",
-            left: "0",
-            top: "0",
-            width: "100%",
-          }}
+      <Stack
+        alignItems="center"
+        px="1.5rem"
+        py="0.5rem"
+        flexDirection="row"
+        justifyContent="space-between"
+        sx={{
+          borderBottom: !variant
+            ? "0.5px solid #E0E0E0"
+            : !isActive
+            ? "0.5px solid #2F2F32"
+            : "0.5px solid #E0E0E0",
+          background: !variant ? "#fff" : !isActive ? "#6383DD" : "#fff",
+          zIndex: "100",
+          position: "fixed",
+          left: "0",
+          top: "0",
+          width: "100%",
+          transition: "background 0.2s",
+        }}
+      >
+        <Typography
+          fontSize="2.625rem"
+          fontWeight="300"
+          onClick={handleHome}
+          sx={{ cursor: "pointer" }}
         >
-          <Typography
-            fontSize="2.625rem"
-            fontWeight="300"
-            onClick={handleHome}
-            sx={{ cursor: "pointer" }}
-          >
-            alkabot
-          </Typography>
+          alkabot
+        </Typography>
 
-          <Stack flexDirection="row" alignItems="center">
-            <Button
-              variant="contained"
-              color={!isActive ? "primary" : "secondary"}
+        <Stack flexDirection="row" alignItems="center">
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              textTransform: "none",
+              paddingX: "23px",
+              borderRadius: "2rem",
+            }}
+          >
+            Cadastre-se
+          </Button>
+          {!isMobile && (
+            <Typography
+              ml={2}
+              mr={4}
               sx={{
-                textTransform: "none",
-                paddingX: "23px",
-                borderRadius: "2rem",
-                fontWeight: 400,
+                cursor: "pointer",
+                color: !variant ? "primary" : !isActive ? "#fff" : "primary",
+                opacity: !variant ? "60%" : !isActive ? "100%" : "60%",
               }}
             >
-              Cadastre-se
-            </Button>
-            {!isMobile && (
-              <Typography
-                ml={2}
-                mr={4}
-                sx={{
-                  cursor: "pointer",
-                  color: !isActive ? "#fff" : "primary",
-                  opacity: !isActive ? "100%" : "60%",
-                  "&:hover": {
-                    color: !isActive ? "none" : "#706E72",
-                  },
-                }}
-              >
-                Entrar
-              </Typography>
-            )}
-          </Stack>
+              Entrar
+            </Typography>
+          )}
         </Stack>
-      )}
-
-      {!variant && (
-        <Stack
-          alignItems="center"
-          px="1.5rem"
-          py="0.5rem"
-          flexDirection="row"
-          justifyContent="space-between"
-          sx={{
-            borderBottom: "0.5px solid #E0E0E0",
-            background: "#fff",
-            zIndex: "100",
-            position: "fixed",
-            left: "0",
-            top: "0",
-            width: "100%",
-          }}
-        >
-          <Typography
-            fontSize="2.625rem"
-            fontWeight="300"
-            onClick={handleHome}
-            sx={{ cursor: "pointer" }}
-          >
-            alkabot
-          </Typography>
-
-          <Stack flexDirection="row" alignItems="center">
-            <Button
-              variant="contained"
-              color="secondary"
-              sx={{
-                textTransform: "none",
-                paddingX: "23px",
-                borderRadius: "2rem",
-                fontWeight: 400,
-              }}
-            >
-              Cadastre-se
-            </Button>
-            {!isMobile && (
-              <Typography
-                ml={2}
-                mr={4}
-                sx={{
-                  cursor: "pointer",
-                  opacity: "60%",
-                  "&:hover": {
-                    color: "#706E72",
-                  },
-                }}
-              >
-                Entrar
-              </Typography>
-            )}
-          </Stack>
-        </Stack>
-      )}
+      </Stack>
 
       <Box mt="80px">
         {container && <Container>{children}</Container>}

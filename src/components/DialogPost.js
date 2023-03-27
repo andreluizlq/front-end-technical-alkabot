@@ -100,7 +100,7 @@ const DialogPost = ({
           </Box>
           <Divider sx={{ mb: "1.5rem" }} />
           <Stack>
-            <Typography fontSize="14px" color="#757575" mb="1rem">
+            <Typography fontSize="12px" color="#757575" mb="1rem">
               Esta publicação tem {postsComments?.length} comentários:
             </Typography>
             {postsComments.map((item, index) => (
