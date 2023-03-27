@@ -4,7 +4,7 @@ import Perfil from "./pages/Perfil";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/front-end-technical-alkabot",
     element: <Home />,
   },
   {

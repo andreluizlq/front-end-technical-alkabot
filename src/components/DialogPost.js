@@ -34,7 +34,7 @@ const DialogPost = ({
           >
             <Stack alignItems="center" flexDirection="row">
               <Avatar
-                onClick={() => handlePerfil()}
+                onClick={() => handlePerfil(userDetails.id)}
                 sx={{
                   height: "36px",
                   width: "36px",
@@ -51,7 +51,7 @@ const DialogPost = ({
                   color="#292929"
                   mr="6px"
                   sx={{ cursor: "pointer" }}
-                  onClick={handlePerfil}
+                  onClick={() => handlePerfil(userDetails.id)}
                 >
                   {userDetails?.name}
                 </Typography>
@@ -60,7 +60,7 @@ const DialogPost = ({
                   fontSize="12px"
                   color="#757575"
                   sx={{ cursor: "pointer" }}
-                  onClick={handlePerfil}
+                  onClick={() => handlePerfil(userDetails.id)}
                 >
                   {userDetails?.email}
                 </Typography>

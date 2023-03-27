@@ -15,7 +15,7 @@ const Page = ({ children, container = false, variant = false }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleHome = () => {
-    return navigate("/");
+    return navigate("/front-end-technical-alkabot");
   };
 
   useEffect(() => {
